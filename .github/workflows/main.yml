@@ -42,10 +42,9 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
           DATABASE_URL: "postgres://postgres@localhost:5432/db_test"
-        run: bundle exec rspec --require rails_helper
-        # run: |
-        #  bundle exec rake db:schema:load
-        #  bundle exec rspec --require rails_helper
+        run: |
+         bundle exec rake db:schema:load
+         bundle exec rspec --require rails_helper
 
   rubocop:
     name: rubocop
