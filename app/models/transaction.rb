@@ -1,6 +1,5 @@
 class Transaction < ApplicationRecord
-  belong_to :store
-  belong_to :user, through: :store
+  belongs_to :store
 
   validates :type, :amount, presence: true
 
