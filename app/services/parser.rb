@@ -5,7 +5,7 @@ class Parser
   end
 
   def valid?
-    @file.present? && @file.content_type.in?(['.txt', 'text'])
+    @file.present? && @file.content_type.in?(['.txt', 'text/plain'])
   end
 
   def call
