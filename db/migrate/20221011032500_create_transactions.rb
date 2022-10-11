@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[7.0]
 
       t.timestamps
       t.integer :type
-      t.datetime :sale_time
+      t.datetime :sold_at
       t.float :amount
       t.string :document
       t.string :card
