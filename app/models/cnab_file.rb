@@ -1,0 +1,2 @@
+class CnabFile < ApplicationRecord
+end
