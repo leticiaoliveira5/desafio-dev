@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
 
-  def index; end
+  def index
+    @stores = current_user.stores.includes(:transactions)
+  end
 
   def parse_cnab
     return unless params[:file]
