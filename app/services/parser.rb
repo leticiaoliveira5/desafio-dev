@@ -8,7 +8,7 @@ class Parser
     File.read(@file.tempfile).each_line do |line|
 
       t = Transaction.new
-      s = Store.find_or_create_by(owner: line[48..61], name: line[62..81], user: @current_user)
+      s = Store.find_or_create_by(owner: line[48..61].strip, name: line[62..81].strip, user: @current_user)
   
       t.type = line[0].to_i
       year = line[1..4].to_i
