@@ -6,6 +6,7 @@ class Parser
 
   def call
     File.read(@file.tempfile).each_line do |line|
+
       t = Transaction.new
       s = Store.find_or_create_by(owner: line[48..61], name: line[62..81], user: @current_user)
   
@@ -16,7 +17,7 @@ class Parser
       hour = line[42..43].to_i
       minute = line[44..45].to_i
       second = line[46..47].to_i
-      t.sold_at = DateTime.new(year,month,day,hour,minute,second)
+      t.sold_at = DateTime.new(year, month, day, hour, minute, second)
       t.amount = line[9..18]
       t.document = line[19..29]
       t.card = line[30..41]
