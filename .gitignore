@@ -29,3 +29,5 @@
 /config/master.key
 
 .env
+/coverage
+.rubocop-https---raw-githubusercontent-com-leticiaoliveira5-code-style-master--rubocop-yml
