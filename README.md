@@ -6,6 +6,10 @@
 
 Esta aplicação web aceita o upload de um arquio CNAB para ser parseado, salvando seus dados em um banco de dados relacional e exibindo-os em tabelas, ação permitida somente após a autorização do usuário.
 
+### Próximos passos
+
+Implementar a tabela CnabFile, para que o usuário possa guardar arquivos diferentes em sua base de dados.
+
 ## Principais ferramentas
 - Ruby (v3.1.0)
 - Rails (v7.0.1)
@@ -29,13 +33,19 @@ DATABASE_PORT=5432
 RAILS_ENV=development
 ```
 
-Agora rode os comenaods:
+Agora execute os comandos no terminal:
 
 ```
 cd desafio-dev
-docker-compose build -d
-docker compose exec rake db:setup
+docker-compose build
 docker-compose up
+```
+
+Abra um outro terminal execute:
+
+```
+cd desafio-dev
+docker compose exec rake db:setup
 ```
 
 Acesse a aplicação em http://localhost:3000/
