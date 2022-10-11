@@ -24,7 +24,7 @@
       <tbody>
         <% store.transactions.each do |t| %>
           <tr>
-            <td><%= t("activerecord.attributes.transaction.type.#{t.type}") %></td>
+            <td><%= t("activerecord.attributes.transaction.#{t.type}") %></td>
             <td><%= t.sold_at.strftime("%d/%m/%Y %I:%M:%S") %></td>
             <td><%= t.document %></td>
             <td><%= t.card %></td>
