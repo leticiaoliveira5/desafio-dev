@@ -7,8 +7,9 @@ RSpec.describe Parser, type: :service do
 
   describe '#call' do
     it 'insere os dados nas tabelas loja e transação' do
-      expect{ subject.call }.to change(Transaction, :count).by(21)
-        .and change(Store, :count).by(5)
+      expect { subject.call }.to
+      change(Transaction, :count).by(21)
+      .and change(Store, :count).by(5)
       expect(Transaction.first.type).to eq 'financing'
       expect(Store.first.user_id).to eq user.id
     end
