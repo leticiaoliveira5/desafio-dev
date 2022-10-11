@@ -5,4 +5,12 @@ class Transaction < ApplicationRecord
 
   enum type: { debit: 1, slip: 2, financing: 3, credit: 4, loan: 5,
                sales: 6, ted: 7, doc: 8, rent: 9 }
+
+  def value
+    if type.in?(['debit', 'credit', 'loan', 'sales', 'ted', 'doc'])
+      amount
+    else
+      0 - amount
+    end
+  end
 end
