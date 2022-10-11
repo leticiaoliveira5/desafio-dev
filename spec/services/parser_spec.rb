@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Parser, type: :service do
   let(:user) { create(:user) }
   let(:file) { fixture_file_upload('spec/fixtures/CNAB.txt', 'text')  }
-  let(:subject) { described_class.new(file: file, current_user: user) }
+  subject { described_class.new(file: file, current_user: user) }
 
   describe '#call' do
     it 'insere os dados nas tabelas loja e transação' do
