@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
   post :parse_cnab, controller: :home
+  resources :cnab_file, only: %i[show create destroy]
 end
