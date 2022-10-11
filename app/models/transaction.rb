@@ -7,7 +7,7 @@ class Transaction < ApplicationRecord
                sales: 6, ted: 7, doc: 8, rent: 9 }
 
   def value
-    if type.in?(['debit', 'credit', 'loan', 'sales', 'ted', 'doc'])
+    if type.in?(%w[debit credit loan sales ted doc])
       amount
     else
       0 - amount
