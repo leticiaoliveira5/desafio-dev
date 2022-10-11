@@ -1,0 +1,5 @@
+pt-BR:
+  home:
+  index:
+    parser_failure: Houve um problema ao parsear o arquivo. Certifique-se de que o arquivo selecionado é válido.
+    parser_success: Os dados foram carregados com sucesso
