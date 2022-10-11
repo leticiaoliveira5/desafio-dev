@@ -1,11 +1,16 @@
 <h1>Parseador CNAB</h1>
 
-<%= form_with url: parse_cnab_path, method: :post, class: 'upload-btn-wrapper' do |f| %>
+<%= form_with url: cnab_file_index_path, method: :post, class: 'upload-btn-wrapper' do |f| %>
   <%# <button class="btn">Upload a file</button> %>
   <div class="btn">
     <%= f.file_field :file, accept: '.txt, text' %>
   </div>
   <%= f.submit 'Carregar', class: "btn full" %>
+<% end %>
+
+<h3>Arquivos CNAB</h3>
+<%= @cnabs.each do |cnab| %>
+  <%= link_to "Arquivo ##{cnab id}", cnab_file_path(cnab.id) %>
 <% end %>
 
 <div class="table">
