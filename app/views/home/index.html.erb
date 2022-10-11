@@ -1,0 +1,9 @@
+<h1>Parseador CNAB</h1>
+
+<%= form_with url: '/', method: :post, class: 'upload-btn-wrapper' do |f| %>
+  <%# <button class="btn">Upload a file</button> %>
+  <div class="btn">
+    <%= f.file_field :txt_file, accept: '.txt, text' %>
+  </div>
+  <%= f.submit 'Carregar', class: "btn full" %>
+<% end %>
