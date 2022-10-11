@@ -26,4 +26,8 @@ class Parser
       t.save!
     end
   end
+
+  def valid?
+    !@file.blank? && @file.content_type.in?(['.txt', 'text'])
+  end
 end
