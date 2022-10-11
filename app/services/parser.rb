@@ -17,7 +17,7 @@ class Parser
 
       t.type = line[0].to_i
       t.sold_at = make_date(line)
-      t.amount = line[9..18]
+      t.amount = line[9..18].to_i / 100.00
       t.document = line[19..29]
       t.card = line[30..41]
       t.store_id = s.id
