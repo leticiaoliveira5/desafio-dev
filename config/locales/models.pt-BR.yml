@@ -5,6 +5,8 @@ pt-BR:
         owner: Dono da Loja
         name: Nome
       transaction:
+        amount: Valor
+        solt_at: Data e Hora da Venda
         type:
           debit: Débito
           slip: Boleto
@@ -15,3 +17,4 @@ pt-BR:
           loan: Empréstimo
           rent: Aluguel
           credit: Crédito
+        card: Cartão utilizado
