@@ -7,8 +7,7 @@
 Esta aplicação web aceita o upload de um arquio CNAB para ser parseado, salvando seus dados em um banco de dados relacional e exibindo-os em tabelas, ação permitida somente após a autorização do usuário.
 
 ### Próximos passos
-
-Implementar a tabela CnabFile, para que o usuário possa guardar arquivos diferentes em sua base de dados.
+Implementar a API.
 
 ## Principais ferramentas
 - Ruby (v3.1.0)
