@@ -25,6 +25,8 @@ class ParseFileService
     end
 
     transactions
+  rescue Date::Error
+    false
   end
 
   def make_date(line)

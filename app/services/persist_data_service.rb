@@ -17,5 +17,8 @@ class PersistDataService
     end
 
     cnab_file
+  rescue ArgumentError
+    cnab_file.destroy
+    false
   end
 end
