@@ -4,7 +4,7 @@
 
 ## Descrição do projeto
 
-Esta aplicação web aceita o upload de um arquio CNAB para ser parseado, salvando seus dados em um banco de dados relacional e exibindo-os em tabelas, ação permitida somente após a autorização do usuário.
+Esta aplicação web aceita o upload de arquivos CNAB para serem parseados, salvando os dados em um banco de dados relacional e exibindo-os em tabelas, ação permitida após a autorização do usuário ou via API.
 
 ## Principais ferramentas
 - Ruby (v3.1.0)
