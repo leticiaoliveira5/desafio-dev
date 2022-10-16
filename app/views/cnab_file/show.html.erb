@@ -1,5 +1,5 @@
 <h2>Arquivo <%= @cnab_file.id %></h2>
-
+<%= link_to 'Excluir', cnab_file_path, method: :delete %>
 <div class="table">
   <% @stores.each do |store| %>
     <table>
