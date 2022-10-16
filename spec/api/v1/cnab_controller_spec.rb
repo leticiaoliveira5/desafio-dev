@@ -25,7 +25,7 @@ describe Api::V1::CnabController, type: :request do
   end
 
   context 'o arquivo não é um cnab válido' do
-    let(:file) { fixture_file_upload('spec/fixtures/CNAB-invalid.txt', 'text/plain') }
+    let(:file) { fixture_file_upload('spec/fixtures/Textfile.txt', 'text/plain') }
 
     it 'retorna mensagem de erro' do
       post api_v1_parse_cnab_path, params: { file: file }, headers: { Accept: '*/*' }
