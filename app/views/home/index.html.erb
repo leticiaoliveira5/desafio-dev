@@ -8,7 +8,7 @@
   <%= f.submit 'Carregar', class: "btn full" %>
 <% end %>
 
-<h3>Arquivos CNAB</h3>
+<h3>Arquivos CNAB extraídos</h3>
 <% @cnabs.each do |cnab| %>
-  <%= link_to "Arquivo ##{cnab.id}", cnab_file_path(cnab.id) %>
+  <p><%= link_to "Arquivo ##{cnab.id}", cnab_file_path(cnab.id) %></p>
 <% end %>
