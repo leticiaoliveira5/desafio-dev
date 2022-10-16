@@ -2,3 +2,6 @@ pt-BR:
   parser:
     failure: Houve um problema ao parsear o arquivo. Certifique-se de que o arquivo selecionado é válido.
     success: Os dados foram carregados com sucesso
+  cnab_file:
+    destroy:
+      success: Arquivo removido.

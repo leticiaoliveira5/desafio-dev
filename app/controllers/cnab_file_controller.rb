@@ -20,6 +20,6 @@ class CnabFileController < ApplicationController
   def destroy
     @cnab_file = CnabFile.find(params[:id])
     @cnab_file.destroy!
-    redirect_to root_path, notice: I18n.t('parser.success')
+    redirect_to root_path, notice: I18n.t('cnab_file.destroy.success')
   end
 end
