@@ -10,7 +10,7 @@ describe Api::V1::CnabController, type: :request do
 
       post api_v1_parse_cnab_path(params), headers: headers
 
-      expect(response).to have_http_status(201)
+      expect(response).to have_http_status(:created)
     end
   end
 end
