@@ -16,10 +16,4 @@ class CnabFileController < ApplicationController
       redirect_to root_path, alert: t('.parser_failure')
     end
   end
-
-  private
-
-  def cnab_file_params
-    params.require(:company).permit(:file, :user)
-  end
 end
