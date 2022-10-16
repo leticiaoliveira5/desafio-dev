@@ -7,10 +7,8 @@ class CnabFileController < ApplicationController
   end
 
   def create
-    return unless params[:file]
-
-    data = ParseFileService.new(file: params[:file].tempfile).call
-    cnab_file = PersistDataService.new(data: data, user: current_user).call if data
+    data = ParseFileService.new(file: params[:file]).call
+    cnab_file = PersistDataService.new(data: data, user: current_user).call
 
     if cnab_file
       redirect_to cnab_file_path(cnab_file), notice: I18n.t('parser.success')
