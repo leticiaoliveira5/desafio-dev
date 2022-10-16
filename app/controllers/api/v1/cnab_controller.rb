@@ -3,13 +3,20 @@ module Api
     class CnabController < Api::V1::ApiController
       def parse_cnab
         return unless params[:file]
-    
-        parser = Parser.new(file: params[:file], current_user: current_user)
-    
-        if parser.valid? && parser.call
-          redirect_to root_path, notice: I18n.t('.parser_success')
+
+        data = ParseFileService.new(file: params[:file].tempfile).call
+        render json: { error: 'The file count not be parsed' } unless data
+
+        cnab_file = PersistDataService.new(data: data, user: current_user).call
+
+        if cnab_file
+          render json: cnab_file.to_json(
+            include: { stores: { include: {
+              transactions: { except: %i[created_at updated_at store_id] }
+            }, only: %i[id name owner] } }, only: :id
+          ), status: :created
         else
-          redirect_to root_path, alert: I18n.t('.parser_failure')
+          render json: { error: 'Data could not be persisted' }, status: :unprocessable_entity
         end
       end
     end
