@@ -4,4 +4,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
   post :parse_cnab, controller: :home
+
+  namespace 'api' do
+    namespace 'v1' do
+      post :parse_cnab, controller: :cnab
+    end
+  end
 end
