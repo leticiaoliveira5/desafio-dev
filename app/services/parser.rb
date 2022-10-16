@@ -9,7 +9,8 @@ class Parser
   end
 
   def call
-    c = CnabFile.create(user: @current_user)
+    cnab_file = CnabFile.create(user: @current_user)
+
     File.read(@file.tempfile).each_line do |line|
       t = Transaction.new
       s = Store.find_or_create_by(owner: line[48..61].strip,
@@ -25,6 +26,8 @@ class Parser
 
       t.save!
     end
+
+    return cnab_file
   end
 
   def make_date(line)

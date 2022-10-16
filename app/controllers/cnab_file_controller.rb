@@ -9,8 +9,9 @@ class CnabFileController < ApplicationController
   def create
     parser = Parser.new(file: params[:file], current_user: current_user)
 
-    if parser.valid? && parser.call
-      redirect_to root_path, notice: t('.parser_success')
+    if parser.valid?
+      cnab = parser.call
+      redirect_to cnab_file_path(cnab), notice: t('.parser_success')
     else
       redirect_to root_path, alert: t('.parser_failure')
     end
