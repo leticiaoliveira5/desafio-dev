@@ -7,13 +7,15 @@ class CnabFileController < ApplicationController
   end
 
   def create
-    parser = Parser.new(file: params[:file], current_user: current_user)
+    return unless params[:file]
 
-    if parser.valid?
-      cnab = parser.call
-      redirect_to cnab_file_path(cnab), notice: t('parser.success')
+    data = ParseFileService.new(file: params[:file].tempfile).call
+    cnab_file = PersistDataService.new(data: data, user: current_user).call if data
+
+    if cnab_file
+      redirect_to cnab_file_path(cnab_file), notice: I18n.t('parser.success')
     else
-      redirect_to root_path, alert: t('parser.failure')
+      redirect_to root_path, alert: I18n.t('parser.failure')
     end
   end
 end
