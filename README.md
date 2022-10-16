@@ -17,9 +17,8 @@ Esta aplicação web aceita o upload de um arquio CNAB para ser parseado, salvan
 
 Para testar, a melhor opção é usar o Docker. Pra isso, é necessário ter instalado na máquina o docker e docker compose.
 
-Primeiro, clone este repositório.
+Clonado repositório, localmente, crie um arquivo `.env` na raiz do projeto, com este conteúdo:
 
-Crie um arquivo `.env` na raiz do projeto, com este conteúdo:
 (isso será importante para a criação e conexão com o banco de dados postgres)
 
 ```
@@ -64,13 +63,13 @@ admin@app.net
 
 Para consumir o endpoint da API, somente é necessário que a aplicação esteja rodando.
 
-Caso esteja no VSCode, baixe a extensão Thunder Cliente e clique no botão New Request, ou Nova requisição.
+Caso esteja no VSCode, instale a extensão Thunder Client e clique no botão New Request, ou Nova requisição.
 
 - Selecione o método **POST** e preencha a url com **`http://localhost:3000/api/v1/parse_cnab`**
 
   ![image](https://user-images.githubusercontent.com/74281572/196061726-e10da8e3-8d86-481f-ad06-7fcf14f98bb1.png)
 
-- Adicione o arquivo `CNAB.txt` para o campo `file`.
+- Adicione o arquivo [CNAB.txt](https://github.com/ByCodersTec/desafio-ruby-on-rails/blob/master/CNAB.txt) para o campo `file`.
 
   ![1](https://user-images.githubusercontent.com/74281572/196061737-cacdc40a-0547-4749-aa52-b9786a3d4101.PNG)
 
