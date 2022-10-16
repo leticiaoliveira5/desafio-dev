@@ -8,6 +8,7 @@ class Parser
     @file.present? && @file.content_type.in?(['.txt', 'text/plain'])
   end
 
+  # rubocop:disable Metrics/AbcSize
   def call
     cnab_file = CnabFile.create(user: @current_user)
 
@@ -29,6 +30,7 @@ class Parser
 
     cnab_file
   end
+  # rubocop:enable Metrics/AbcSize
 
   def make_date(line)
     year = line[1..4].to_i
