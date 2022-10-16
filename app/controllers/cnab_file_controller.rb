@@ -11,9 +11,9 @@ class CnabFileController < ApplicationController
 
     if parser.valid?
       cnab = parser.call
-      redirect_to cnab_file_path(cnab), notice: t('.parser_success')
+      redirect_to cnab_file_path(cnab), notice: t('parser.success')
     else
-      redirect_to root_path, alert: t('.parser_failure')
+      redirect_to root_path, alert: t('parser.failure')
     end
   end
 end
