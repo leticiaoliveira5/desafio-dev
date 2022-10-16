@@ -27,7 +27,7 @@ class Parser
       t.save!
     end
 
-    return cnab_file
+    cnab_file
   end
 
   def make_date(line)
