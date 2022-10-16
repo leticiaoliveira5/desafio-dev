@@ -5,6 +5,8 @@ class PersistDataService
   end
 
   def call
+    return false unless @data
+
     cnab_file = CnabFile.create(user: @user)
 
     @data.each do |t|
