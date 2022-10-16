@@ -65,3 +65,13 @@ caption {
   padding: 8px;
   font-weight: 700;
 }
+
+.alert-success {
+  color: green;
+  font-weight: 700;
+}
+
+.alert-danger {
+  color: red;
+  font-weight: 700;
+}

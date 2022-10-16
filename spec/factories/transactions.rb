@@ -7,6 +7,6 @@ FactoryBot.define do
     amount { 100.50 }
     document { '12345678910234' }
     card { '1111****1111' }
-    store { store }
+    store
   end
 end
