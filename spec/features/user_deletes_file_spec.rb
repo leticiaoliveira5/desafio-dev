@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User deletes cnab file', type: :feature do
   let(:user) { create(:user) }
-  let(:cnab_file) { create(:cnab_file, user: user) }
+  let!(:cnab_file) { create(:cnab_file, user: user) }
 
   scenario 'successfully' do
     sign_in(user)
