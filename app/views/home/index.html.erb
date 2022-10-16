@@ -1,6 +1,6 @@
 <h1>Parseador CNAB</h1>
 
-<%= form_with url: parse_cnab_path, method: :post, class: 'upload-btn-wrapper' do |f| %>
+<%= form_with url: api_v1_parse_cnab_path, method: :post, class: 'upload-btn-wrapper' do |f| %>
   <%# <button class="btn">Upload a file</button> %>
   <div class="btn">
     <%= f.file_field :file, accept: '.txt, text' %>
