@@ -8,6 +8,8 @@ class ParseFileService
   end
 
   def call
+    return false unless valid?
+
     transactions = []
 
     File.read(@file).each_line do |line|
@@ -23,8 +25,6 @@ class ParseFileService
     end
 
     transactions
-  rescue NoMethodError
-    return false
   end
 
   def make_date(line)
