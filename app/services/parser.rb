@@ -15,7 +15,7 @@ class Parser
       t = Transaction.new
       s = Store.find_or_create_by(owner: line[48..61].strip,
                                   name: line[62..81].strip,
-                                  cnab_file: c)
+                                  cnab_file: cnab_file)
 
       t.type = line[0].to_i
       t.sold_at = make_date(line)
