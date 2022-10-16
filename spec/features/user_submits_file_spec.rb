@@ -14,6 +14,5 @@ describe 'User submits file to be parsed', type: :feature do
     expect(current_path).to eq cnab_file_path(CnabFile.last)
     expect(page).to have_text('Arquivo')
     expect(page).to have_link('Excluir')
-    expect(page).to have_link('Página Inicial')
   end
 end
