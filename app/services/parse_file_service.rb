@@ -18,10 +18,8 @@ class ParseFileService
                         amount: line[9..18].to_i / 100.00,
                         document: line[19..29],
                         card: line[30..41],
-                        store: {
-                          owner: line[48..61].strip,
-                          name: line[62..81].strip
-                        } }
+                        store: { owner: line[48..61].strip,
+                                 name: line[62..81].strip } }
     end
 
     transactions
