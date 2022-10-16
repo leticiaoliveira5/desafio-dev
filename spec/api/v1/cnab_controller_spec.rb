@@ -19,7 +19,7 @@ describe Api::V1::CnabController, type: :request do
     it 'retorna mensagem de erro' do
       post api_v1_parse_cnab_path, params: { file: file }, headers: { Accept: '*/*' }
 
-      expect(JSON.parse(response.body)).to include 'The file could not be parsed'
+      expect(JSON.parse(response.body)['error']).to include 'The file could not be parsed'
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
@@ -30,7 +30,7 @@ describe Api::V1::CnabController, type: :request do
     it 'retorna mensagem de erro' do
       post api_v1_parse_cnab_path, params: { file: file }, headers: { Accept: '*/*' }
 
-      expect(JSON.parse(response.body)).to include 'The file could not be parsed'
+      expect(JSON.parse(response.body)['error']).to include 'The file could not be parsed'
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
