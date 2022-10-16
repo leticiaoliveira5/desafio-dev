@@ -9,8 +9,8 @@ RSpec.describe Parser, type: :service do
     it 'insere os dados nas tabelas loja e transação' do
       expect { parser.call }.to change(Transaction, :count).by(21)
         .and change(Store, :count).by(5)
+        .and change(user.cnab_files, :count).by(1)
       expect(Transaction.first.type).to eq 'financing'
-      expect(Store.first.user_id).to eq user.id
     end
   end
 

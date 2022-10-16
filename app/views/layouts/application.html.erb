@@ -14,6 +14,7 @@
     <%= javascript_include_tag 'application' %>
 
     <nav>
+      <%= link_to 'Página Inicial', root_path %>
       <%= link_to 'Sair', destroy_user_session_path, method: :delete if user_signed_in? %>
     </nav>
   </head>
