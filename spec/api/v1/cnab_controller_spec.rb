@@ -5,11 +5,10 @@ describe Api::V1::CnabController, type: :request do
 
   context 'parse_cnab' do
     it 'interpreta o arquivo e retorna os objetos criados' do
-      params = { file: file, format: 'json' }
-      headers = { 'Content-Type': 'text/plain' }
+      post api_v1_parse_cnab_path, params: { file: file }, headers: { Accept: '*/*' }
 
-      post api_v1_parse_cnab_path(params), headers: headers
-
+      expect(JSON.parse(response.body)).to have_key('stores')
+      expect(JSON.parse(response.body)['stores'][0]).to have_key('transactions')
       expect(response).to have_http_status(:created)
     end
   end
