@@ -12,7 +12,7 @@ class ParseFileService
 
     transactions = []
 
-    File.read(@file).each_line do |line|
+    @file.read.each_line do |line|
       transactions << { type: line[0].to_i,
                         sold_at: make_date(line),
                         amount: line[9..18].to_i / 100.00,
