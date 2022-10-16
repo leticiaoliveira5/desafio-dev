@@ -10,7 +10,7 @@ module Api
             render json: cnab_file.to_json(
               include: { stores: { include: {
                 transactions: { except: %i[created_at updated_at store_id] }
-              }, only: %i[id name owner] } }, only: :id
+              }, only: %i[id name owner balance] } }, only: :id
             ), status: :created
           else
             render json: { error: 'Data could not be persisted' }, status: :unprocessable_entity
