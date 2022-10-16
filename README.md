@@ -66,8 +66,16 @@ Para consumir o endpoint da API, somente é necessário que a aplicação esteja
 
 Caso esteja no VSCode, baixe a extensão Thunder Cliente e clique no botão New Request, ou Nova requisição.
 
-Selecione o método **POST** e preencha a url com **`http://localhost:3000/api/v1/parse_cnab`**
+- Selecione o método **POST** e preencha a url com **`http://localhost:3000/api/v1/parse_cnab`**
 
-Adicione o arquivo `CNAB.txt` para o campo `file`.
+  ![image](https://user-images.githubusercontent.com/74281572/196061726-e10da8e3-8d86-481f-ad06-7fcf14f98bb1.png)
 
-Clique em **SEND**.
+- Adicione o arquivo `CNAB.txt` para o campo `file`.
+
+  ![1](https://user-images.githubusercontent.com/74281572/196061737-cacdc40a-0547-4749-aa52-b9786a3d4101.PNG)
+
+- Clique em **SEND**.
+
+- A resposta deve ser os dados do arquivo, interpretados:
+
+  ![image](https://user-images.githubusercontent.com/74281572/196061795-1cd4d23b-e481-45c9-b0ca-1be6712cd7c9.png)
