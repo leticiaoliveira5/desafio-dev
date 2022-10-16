@@ -7,6 +7,7 @@ class Store < ApplicationRecord
   attribute :balance, :float
 
   def balance
-    '%.2f' % transactions.sum(&:value)
+    total = transactions.sum(&:value)
+    number_with_precision(total, precision: 2)
   end
 end
