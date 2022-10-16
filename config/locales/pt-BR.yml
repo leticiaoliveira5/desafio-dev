@@ -1,5 +1,4 @@
 pt-BR:
-  home:
-    parse_cnab:
-      parser_failure: Houve um problema ao parsear o arquivo. Certifique-se de que o arquivo selecionado é válido.
-      parser_success: Os dados foram carregados com sucesso
+  parser:
+    failure: Houve um problema ao parsear o arquivo. Certifique-se de que o arquivo selecionado é válido.
+    success: Os dados foram carregados com sucesso
