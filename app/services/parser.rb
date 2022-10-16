@@ -9,13 +9,12 @@ class Parser
   end
 
   def call
+    c = CnabFile.create(user: @current_user)
     File.read(@file.tempfile).each_line do |line|
-      c = CnabFile.create(user: @current_user)
       t = Transaction.new
-      s = Store.create(owner: line[48..61].strip,
-                       name: line[62..81].strip,
-                       user: c.user,
-                       cnab_file: c)
+      s = Store.find_or_create_by(owner: line[48..61].strip,
+                                  name: line[62..81].strip,
+                                  cnab_file: c)
 
       t.type = line[0].to_i
       t.sold_at = make_date(line)
