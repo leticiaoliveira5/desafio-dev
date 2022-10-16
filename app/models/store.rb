@@ -8,6 +8,6 @@ class Store < ApplicationRecord
 
   def balance
     total = transactions.sum(&:value)
-    number_with_precision(total, precision: 2)
+    format('%<num>0.2f', num: total)
   end
 end
