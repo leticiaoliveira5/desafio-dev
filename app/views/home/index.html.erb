@@ -9,41 +9,6 @@
 <% end %>
 
 <h3>Arquivos CNAB</h3>
-<%= @cnabs.each do |cnab| %>
-  <%= link_to "Arquivo ##{cnab id}", cnab_file_path(cnab.id) %>
+<% @cnabs.each do |cnab| %>
+  <%= link_to "Arquivo ##{cnab.id}", cnab_file_path(cnab.id) %>
 <% end %>
-
-<div class="table">
-  <% @stores.each do |store| %>
-    <table>
-      <caption>Nome da loja: <%= store.name %> | Nome do representante da loja: <%= store.owner %></caption>
-      <thead>
-        <tr>
-          <th>Tipo</th>
-          <th>Data e Hora</th>
-          <th>CPF do beneficiário</th>
-          <th>Cartão utilizado na transação</th>
-          <th>Valor:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% store.transactions.each do |t| %>
-          <tr>
-            <td><%= t("activerecord.attributes.transaction.type.#{t.type}") %></td>
-            <td><%= t.sold_at.strftime("%d/%m/%Y %I:%M:%S") %></td>
-            <td><%= t.document %></td>
-            <td><%= t.card %></td>
-            <td><%= t.amount %></td>
-          <tr>
-        <% end %>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Total:</td>
-            <th><%= '%.2f' % store.transactions.sum(&:value) %></th>
-        <tr>
-      </tbody>
-    </table>
-  <% end %>
-</div>
