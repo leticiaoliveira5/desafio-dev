@@ -15,3 +15,15 @@ pt-BR:
           loan: Empréstimo
           rent: Aluguel
           credit: Crédito
+        amount: Valor
+        solt_at: Data e Hora da Venda
+        debit: Débito
+        slip: Boleto
+        financing: Financiamento
+        ted: TED
+        doc: DOC
+        sales: Vendas
+        loan: Empréstimo
+        rent: Aluguel
+        credit: Crédito
+        card: Cartão utilizado
