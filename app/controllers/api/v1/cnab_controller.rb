@@ -16,7 +16,7 @@ module Api
             render json: { error: 'Data could not be persisted' }, status: :unprocessable_entity
           end
         else
-          render json: { error: 'The file could not be parsed' }
+          render json: { error: 'The file could not be parsed' }, status: :unprocessable_entity
         end
       end
     end
